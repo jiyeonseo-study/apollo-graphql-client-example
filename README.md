@@ -18,6 +18,20 @@ const query = gql`
 `
 ``` 
 ```js
+export const DETAIL_PAGE = gql`
+query getMovieDetails($movieId: Int!) {
+  movie(id: $movieId) {
+    medium_cover_image
+    title
+    rating
+    description_intro
+    language
+    genres
+  }
+}
+`
+
+<Query query={DETAIL_PAGE} variables={{movieId : movieId}}></Query>
 ```
 - [react-helmet](https://github.com/nfl/react-helmet) : takes plain HTML tags and outputs plain HTML tags
 ```js
